@@ -11,12 +11,12 @@ import java.util.Set;
 @ToString
 public class Customer {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO, generator = "CUSTOMER_SEQ")
-//    @Column(columnDefinition = "numeric(20, 0)")
+    @GeneratedValue(strategy = GenerationType.AUTO, generator = "\"customer_seq\"")
+    @Column(columnDefinition = "decimal(20)")
     private BigInteger id;
     private String name;
 
-    @OneToMany(mappedBy = "cus")
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<Order> orders;
 
     public void addOrder(Order order) {

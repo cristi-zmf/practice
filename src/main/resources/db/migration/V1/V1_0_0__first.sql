@@ -1,5 +1,5 @@
-create sequence "customer_seq";
-create table customer (
-    id numeric (20, 0) primary key,
+create sequence "customer_seq" start 1 increment 1;
+create table "customer" (
+    id numeric (20) primary key,
     name varchar (60)
 );

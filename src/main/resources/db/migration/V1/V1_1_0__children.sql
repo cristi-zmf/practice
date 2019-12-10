@@ -1,5 +1,9 @@
 create table "order" (
-    id numeric (20, 0) primary key,
-    customer_id numeric (20, 0) references customer(id),
+    id decimal (20) primary key,
     value varchar (255)
 );
+
+create table "customer_orders" (
+    customer_id decimal (20),
+    orders_id numeric (20, 0)
+)

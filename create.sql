@@ -1,0 +1,14 @@
+create sequence "customer_seq" start 1 increment 1;
+create table "customer" (id decimal(20) not null, name varchar(255), primary key (id));
+create table "customer_orders" ("customer_id" decimal(20) not null, "orders_id" decimal not null, primary key ("customer_id", "orders_id"));
+create table "order" (id decimal not null, value varchar(255), primary key (id));
+alter table "customer_orders" add constraint UK_4m0sjmnfkb97mpn89e5xnw3v3 unique ("orders_id");
+alter table "customer_orders" add constraint FKqwc66shw47cmh7v28qmp1xurx foreign key ("orders_id") references "order";
+alter table "customer_orders" add constraint FKixtermghgf4o11ua2w2gbgpaf foreign key ("customer_id") references "customer";
+create sequence "customer_seq" start 1 increment 1;
+create table "customer" (id decimal(20) not null, name varchar(255), primary key (id));
+create table "customer_orders" ("customer_id" decimal(20) not null, "orders_id" decimal not null, primary key ("customer_id", "orders_id"));
+create table "order" (id decimal not null, value varchar(255), primary key (id));
+alter table "customer_orders" add constraint UK_4m0sjmnfkb97mpn89e5xnw3v3 unique ("orders_id");
+alter table "customer_orders" add constraint FKqwc66shw47cmh7v28qmp1xurx foreign key ("orders_id") references "order";
+alter table "customer_orders" add constraint FKixtermghgf4o11ua2w2gbgpaf foreign key ("customer_id") references "customer";
