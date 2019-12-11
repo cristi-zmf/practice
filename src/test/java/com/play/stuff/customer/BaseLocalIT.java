@@ -8,7 +8,6 @@ import javax.transaction.Transactional;
 
 @SpringBootTest
 @ActiveProfiles("test")
-@Sql(value = "/create.sql", executionPhase = Sql.ExecutionPhase.BEFORE_TEST_METHOD)
 @Transactional
 public class BaseLocalIT {
 

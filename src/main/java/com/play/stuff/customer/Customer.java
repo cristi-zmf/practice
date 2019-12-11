@@ -7,12 +7,12 @@ import java.math.BigInteger;
 import java.util.Set;
 
 @Entity
-@Table(name = "\"CUSTOMER\"")
+@Table(name = "CUSTOMER")
 @ToString
 public class Customer {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO, generator = "\"customer_seq\"")
-    @Column(columnDefinition = "decimal(20)")
+    @GeneratedValue(strategy = GenerationType.AUTO, generator = "customer_seq")
+//    @Column(columnDefinition = "decimal(20)")
     private BigInteger id;
     private String name;
 
