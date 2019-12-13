@@ -107,7 +107,11 @@
                     <password>admin</password>
                 </configuration>
             </plugin>
-
+            <plugin>
+                <groupId>org.flywaydb</groupId>
+                <artifactId>flyway-maven-plugin</artifactId>
+                <version>6.1.0</version>
+            </plugin>
         </plugins>
     </build>
 
