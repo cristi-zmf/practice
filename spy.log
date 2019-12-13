@@ -1,16 +1,31 @@
-1576106853794|0|commit|connection 0|url jdbc:p6spy:h2:mem:testdb||
-1576106853800|0|commit|connection 0|url jdbc:p6spy:h2:mem:testdb||
-1576106853843|0|commit|connection 0|url jdbc:p6spy:h2:mem:testdb||
-1576106853847|0|commit|connection 0|url jdbc:p6spy:h2:mem:testdb||
-1576106853875|0|commit|connection 1|url jdbc:p6spy:h2:mem:testdb||
-1576106853875|0|commit|connection 0|url jdbc:p6spy:h2:mem:testdb||
-1576106853893|0|commit|connection 1|url jdbc:p6spy:h2:mem:testdb||
-1576106853894|0|commit|connection 0|url jdbc:p6spy:h2:mem:testdb||
-1576106853909|0|commit|connection 1|url jdbc:p6spy:h2:mem:testdb||
-1576106853909|0|commit|connection 0|url jdbc:p6spy:h2:mem:testdb||
-1576106853916|0|commit|connection 0|url jdbc:p6spy:h2:mem:testdb||
-1576106853917|0|commit|connection 1|url jdbc:p6spy:h2:mem:testdb||
-1576106853925|0|commit|connection 0|url jdbc:p6spy:h2:mem:testdb||
-1576106856131|1|statement|connection 1|url jdbc:p6spy:h2:mem:testdb|insert into customer (name, id) values (?, ?)|insert into customer (name, id) values (NULL, 1)
-1576106856141|0|commit|connection 1|url jdbc:p6spy:h2:mem:testdb||
-1576106856149|0|rollback|connection 0|url jdbc:p6spy:h2:mem:testdb||
+1576199826989|0|commit|connection 0|url jdbc:p6spy:h2:mem:testdb||
+1576199826996|0|commit|connection 0|url jdbc:p6spy:h2:mem:testdb||
+1576199827035|0|commit|connection 0|url jdbc:p6spy:h2:mem:testdb||
+1576199827051|0|commit|connection 0|url jdbc:p6spy:h2:mem:testdb||
+1576199827070|2|statement|connection 1|url jdbc:p6spy:h2:mem:testdb|create sequence "customer_seq" start 1 increment 1|create sequence "customer_seq" start 1 increment 1
+1576199827071|0|statement|connection 1|url jdbc:p6spy:h2:mem:testdb|create table customer (     id numeric (20) primary key,     name varchar (60) )|create table customer (     id numeric (20) primary key,     name varchar (60) )
+1576199827081|0|commit|connection 1|url jdbc:p6spy:h2:mem:testdb||
+1576199827082|0|commit|connection 0|url jdbc:p6spy:h2:mem:testdb||
+1576199827092|0|statement|connection 1|url jdbc:p6spy:h2:mem:testdb|create table c_order (     id decimal (20) primary key,     value varchar (255),     customer_id decimal(20) )|create table c_order (     id decimal (20) primary key,     value varchar (255),     customer_id decimal(20) )
+1576199827092|0|statement|connection 1|url jdbc:p6spy:h2:mem:testdb|create table customer_orders (     customer_id decimal (20),     orders_id numeric (20, 0) ) |create table customer_orders (     customer_id decimal (20),     orders_id numeric (20, 0) ) 
+1576199827099|0|commit|connection 1|url jdbc:p6spy:h2:mem:testdb||
+1576199827100|0|commit|connection 0|url jdbc:p6spy:h2:mem:testdb||
+1576199827118|0|commit|connection 1|url jdbc:p6spy:h2:mem:testdb||
+1576199827119|0|commit|connection 0|url jdbc:p6spy:h2:mem:testdb||
+1576199827125|0|commit|connection 0|url jdbc:p6spy:h2:mem:testdb||
+1576199827126|0|commit|connection 1|url jdbc:p6spy:h2:mem:testdb||
+1576199827133|0|commit|connection 0|url jdbc:p6spy:h2:mem:testdb||
+1576199829622|0|statement|connection 1|url jdbc:p6spy:h2:mem:testdb|insert into customer (name, id) values (?, ?)|insert into customer (name, id) values (NULL, 1)
+1576199829622|0|statement|connection 1|url jdbc:p6spy:h2:mem:testdb|insert into c_order (customer_id, value, id) values (?, ?, ?)|insert into c_order (customer_id, value, id) values (1, 'value', 2)
+1576199829631|0|commit|connection 1|url jdbc:p6spy:h2:mem:testdb||
+1576199829644|0|statement|connection 1|url jdbc:p6spy:h2:mem:testdb|insert into c_order (customer_id, value, id) values (?, ?, ?)|insert into c_order (customer_id, value, id) values (1, 'new order', 3)
+1576199829644|0|commit|connection 1|url jdbc:p6spy:h2:mem:testdb||
+1576199829646|0|statement|connection 1|url jdbc:p6spy:h2:mem:testdb|insert into c_order (customer_id, value, id) values (?, ?, ?)|insert into c_order (customer_id, value, id) values (1, 'new order', 4)
+1576199829647|0|commit|connection 1|url jdbc:p6spy:h2:mem:testdb||
+1576199829683|1|statement|connection 1|url jdbc:p6spy:h2:mem:testdb|delete from c_order where id=?|delete from c_order where id=2
+1576199829684|0|statement|connection 1|url jdbc:p6spy:h2:mem:testdb|delete from c_order where id=?|delete from c_order where id=3
+1576199829684|0|commit|connection 1|url jdbc:p6spy:h2:mem:testdb||
+1576199829700|0|statement|connection 1|url jdbc:p6spy:h2:mem:testdb|delete from c_order where id=?|delete from c_order where id=4
+1576199829701|0|statement|connection 1|url jdbc:p6spy:h2:mem:testdb|delete from customer where id=?|delete from customer where id=1
+1576199829701|0|commit|connection 1|url jdbc:p6spy:h2:mem:testdb||
+1576199829708|0|rollback|connection 0|url jdbc:p6spy:h2:mem:testdb||
